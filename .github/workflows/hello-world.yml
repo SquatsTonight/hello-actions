@@ -14,6 +14,15 @@ jobs:
   install:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: Installation
-      run: docker info
-      shell: bash
+      run: bash ./test.sh
+    - name: file
+      run: echo 'docker info' > ./test1.sh
+  after-install:
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+    - name: exe
+      run: bash ./test1.sh
