@@ -2,6 +2,9 @@
 
 name: Serverless Devs
 
+env:
+  my_env: hello alibaba
+
 on:
   push:
     branches:
@@ -13,16 +16,16 @@ on:
 jobs:
   install:
     runs-on: ubuntu-latest
+    output:
+      output1: ${{ steps.Installation.outputs.endpoint }}
     steps:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Installation
-      run: bash ./test.sh
-    - name: file
-      run: echo 'docker info' > ./test1.sh
-  after-install:
-    runs-on: ubuntu-latest
-    needs: install
-    steps:
-    - name: exe
-      run: bash ./test1.sh
+      run: |
+        # ENDPOINT="$(cat ./output.log | grep 'EndPoint:' | sed -e 's/.*EndPoint: //')"
+        echo "$ENDPOINT"
+        echo "::set-output name=endpoint::$ENDPOINT"
+      shell: bash
+    - name: after
+      run: echo ${{ output.output1 }}
