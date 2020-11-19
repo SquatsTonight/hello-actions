@@ -1,0 +1,12 @@
+ServerlessDevsJava8:
+  Component: fc
+  Provider: alibaba
+  Properties:
+    Region: cn-hongkong
+    Service:
+      Name: fun-demo
+    Function:
+      Name: fun-demo1
+      CodeUri: ./
+      Handler: example.HelloFC::handleRequest
+      Runtime: java8

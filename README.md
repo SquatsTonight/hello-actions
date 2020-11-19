@@ -1,2 +1,13 @@
-# hello-actions
-This is a demo using Actions in Github
+# 函数计算 Java 项目模板
+
+## 本地运行
+
+```bash
+fun build && fun local invoke
+```
+
+## 部署
+
+```bash
+fun build && fun deploy
+```
