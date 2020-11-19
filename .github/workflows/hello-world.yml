@@ -23,7 +23,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Installation
       run: |
-        # ENDPOINT="$(cat ./output.log | grep 'EndPoint:' | sed -e 's/.*EndPoint: //')"
+        ENDPOINT="$(cat ./output.log | grep 'EndPoint:' | sed -e 's/.*EndPoint: //')"
         echo "$ENDPOINT"
         echo "::set-output name=endpoint::$ENDPOINT"
       shell: bash
