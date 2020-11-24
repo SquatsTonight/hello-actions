@@ -20,4 +20,4 @@ jobs:
     - id: step2
       run: echo "::set-output name=test::world"
     - id: step3
-      run: echo ${{ outputs.output1 }}
+      run: echo ${{ steps.step1.test }} ${{ steps.step2.test }}
