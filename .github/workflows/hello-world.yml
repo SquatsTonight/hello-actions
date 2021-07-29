@@ -19,18 +19,8 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Initializing Serverless-Devs
-      uses: Serverless-Devs/serverless-devs-initialization-action@main
+      uses: Serverless-Devs/serverless-devs-initialization-action@v1
       with:
-        provider: alibaba
         AccessKeyID: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
         AccessKeySecret: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
         AccountID: ${{ secrets.ALIYUN_ACCOUNT_ID }}
-
-    - name: Building
-      run: sudo --preserve-env s build
-
-    - name: Packaging
-      run: sudo --preserve-env s package
-
-    - name: Deploying
-      run: sudo --preserve-env s deploy
