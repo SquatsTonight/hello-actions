@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2.0.0
+      uses: actions/checkout@v2
 
     - name: Initializing Serverless-Devs
-      uses: Serverless-Devs/serverless-devs-initialization-action@v2
+      uses: Serverless-Devs/serverless-devs-initialization-action@v1
       with:
         AccessKeyID: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
         AccessKeySecret: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
